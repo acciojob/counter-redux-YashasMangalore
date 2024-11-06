@@ -1,13 +1,22 @@
-
 import React from "react";
-import './../styles/App.css';
+import { Provider } from "react-redux";
+import "./../styles/App.css";
+import Display from "./Display";
+import Increment from "./Increment";
+import Decrement from "./Decrement";
+import store from "../Utilities/store";
 
 const App = () => {
   return (
-    <div>
+    <Provider store={store}>
+      <div>
         {/* Do not remove the main div */}
-    </div>
-  )
-}
+        <Display />
+        <Increment />
+        <Decrement />
+      </div>
+    </Provider>
+  );
+};
 
-export default App
+export default App;
